@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_swiftui_viper_rxswift_swiftui_viper_rxswiftUITests : NSObject
+@end
+@implementation PodsDummy_Pods_swiftui_viper_rxswift_swiftui_viper_rxswiftUITests
+@end
