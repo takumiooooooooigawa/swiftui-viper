@@ -1,0 +1,18 @@
+current directory: /Users/takumioigawa/dev/ios/swiftui+viper+rxswift/vendor/bundle/ruby/3.4.0/gems/nkf-0.2.0/ext/nkf
+/opt/homebrew/Cellar/rbenv/1.3.2/versions/3.4.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/takumioigawa/dev/ios/swiftui+viper+rxswift/vendor/bundle/ruby/3.4.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250509-39139-5wlw25 sitelibdir\=./.gem.20250509-39139-5wlw25 clean
+
+current directory: /Users/takumioigawa/dev/ios/swiftui+viper+rxswift/vendor/bundle/ruby/3.4.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250509-39139-5wlw25 sitelibdir\=./.gem.20250509-39139-5wlw25
+compiling nkf.c
+linking shared-object nkf.bundle
+
+current directory: /Users/takumioigawa/dev/ios/swiftui+viper+rxswift/vendor/bundle/ruby/3.4.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250509-39139-5wlw25 sitelibdir\=./.gem.20250509-39139-5wlw25 install
+/usr/bin/install -c -m 0755 nkf.bundle ./.gem.20250509-39139-5wlw25
+
+current directory: /Users/takumioigawa/dev/ios/swiftui+viper+rxswift/vendor/bundle/ruby/3.4.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250509-39139-5wlw25 sitelibdir\=./.gem.20250509-39139-5wlw25 clean
