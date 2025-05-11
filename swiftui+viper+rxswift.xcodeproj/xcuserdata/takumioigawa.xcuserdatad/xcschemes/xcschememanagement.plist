@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>swiftui+viper+rxswift.xcscheme_^#shared#^_</key>
+		<key>debug swiftui+viper+rxswift.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>9</integer>
+		</dict>
+		<key>swiftui+viper+rxswift.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7CA57D532DCE2F7200A87CE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7CA57D602DCE2F7300A87CE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7CA57D6A2DCE2F7300A87CE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

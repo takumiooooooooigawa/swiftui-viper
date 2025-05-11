@@ -18,18 +18,20 @@ extension SamplePageView: SamplePagePresenterToViewProtocol{
 }
 
 struct SamplePage: View {
-
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack(){
+            Button("遷移する"){
+                // path.append(0)
+            }
+            .navigationTitle("ホーム")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(for: Int.self, destination: { _ in
+                Text("hoge")
+            })
         }
-        .padding()
     }
 }
 
-//#Preview {
-//    SamplePageView()
-//}
+#Preview {
+    SamplePage()
+}
