@@ -12,7 +12,7 @@ import SwiftUI
 class SamplePageView: CommonView<SamplePagePresenter> {}
 
 extension SamplePageView: SamplePagePresenterToViewProtocol{
-    func showSamplePage() -> any View {
+    func showSamplePage() -> some View {
         SamplePage()
     }
 }
@@ -29,6 +29,16 @@ struct SamplePage: View {
                 Text("hoge")
             })
         }
+//        NavigationStack {
+//            NavigationLink(value: "NewView") {
+//                Text("Show NewView")
+//            }
+//            .navigationDestination(for: String.self) { view in
+//                if view == "NewView" {
+//                    Text("This is NewView")
+//                }
+//            }
+//        }
     }
 }
 

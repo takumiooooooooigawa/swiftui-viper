@@ -9,5 +9,6 @@ class SamplePageRouter {}
 
 extension SamplePageRouter: SamplePagePresenterToRouterProtocol {
     func pushToSampleDetailPage() {
+        
     }
 }

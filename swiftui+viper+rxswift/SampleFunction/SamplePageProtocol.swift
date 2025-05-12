@@ -18,7 +18,8 @@ protocol SamplePageInteractorToPresenterProtocol: CommonInteractorToPresenterPro
 }
 
 protocol SamplePagePresenterToViewProtocol: CommonPresenterToViewProtocol{
-    func showSamplePage() -> any View
+    associatedtype AssocView: View
+    func showSamplePage() -> AssocView
 }
 
 protocol SamplePagePresenterToInteractorProtocol: CommonPresenterToInteractorProtocol{
