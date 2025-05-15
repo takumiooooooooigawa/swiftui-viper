@@ -12,36 +12,27 @@ import SwiftUI
 class SamplePageView: CommonView<SamplePagePresenter> {}
 
 extension SamplePageView: SamplePagePresenterToViewProtocol{
-    func showSamplePage() -> some View {
-        SamplePage()
+    @MainActor func showSamplePage() -> some View {
+        SamplePage(presenter: presenter!)
     }
 }
 
 struct SamplePage: View {
+    @State var presenter: SamplePagePresenter
+
     var body: some View {
-        NavigationStack(){
-            Button("遷移する"){
-                // path.append(0)
+        NavigationStack {
+            NavigationLink(value: "NewView") {
+                Text("Show NewView")
             }
-            .navigationTitle("ホーム")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: Int.self, destination: { _ in
-                Text("hoge")
-            })
+            .buttonStyle(.plain)
+            .navigationDestination(for: String.self) { view in
+                presenter.showSampleDetailPage()
+            }
         }
-//        NavigationStack {
-//            NavigationLink(value: "NewView") {
-//                Text("Show NewView")
-//            }
-//            .navigationDestination(for: String.self) { view in
-//                if view == "NewView" {
-//                    Text("This is NewView")
-//                }
-//            }
-//        }
     }
 }
 
-#Preview {
-    SamplePage()
-}
+//#Preview {
+//    SamplePage()
+//}

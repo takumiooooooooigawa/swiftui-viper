@@ -18,18 +18,17 @@ struct swiftui_viper_rxswiftApp: App {
             let presenter = SamplePagePresenter()
             let view = SamplePageView(presenter: presenter)
             let interactor = SamplePageInteractor(presenter: presenter)
-            let router = SamplePageRouter()
+            let router = SamplePageRouter(presenter: presenter)
             presenter.lateInit(view: view, interactor: interactor, router: router)
-            appDelegate.presenter = presenter
-            return appDelegate.presenter.view!.showSamplePage()
+            return presenter.showSamplePage()
         }
     }
 }
 
 // AppDelegate.swiftの処理を書く
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    // 表示している画面のPresenterを保持する
-    var presenter: Presenter = SamplePagePresenter()
+    // 表示している画面のPresenterを保持する?
+    // var presenter: Presenter = SamplePagePresenter()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 

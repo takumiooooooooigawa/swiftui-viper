@@ -63,22 +63,16 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		7CA57D562DCE2F7200A87CE9 /* swiftui+viper+rxswift */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = "swiftui+viper+rxswift";
 			sourceTree = "<group>";
 		};
 		7CA57D642DCE2F7300A87CE9 /* swiftui+viper+rxswiftTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = "swiftui+viper+rxswiftTests";
 			sourceTree = "<group>";
 		};
 		7CA57D6E2DCE2F7300A87CE9 /* swiftui+viper+rxswiftUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = "swiftui+viper+rxswiftUITests";
 			sourceTree = "<group>";
 		};

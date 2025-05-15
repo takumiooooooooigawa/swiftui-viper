@@ -9,7 +9,8 @@ import SwiftUICore
 
 protocol SamplePageViewToPresenterProtocol: CommonViewToPresenterProtocol{
     func fetchData()
-    func showSampleDetailPage()
+    associatedtype AssocViewV2P: View
+    @MainActor func showSampleDetailPage() -> AssocViewV2P
 }
 
 protocol SamplePageInteractorToPresenterProtocol: CommonInteractorToPresenterProtocol{
@@ -17,9 +18,14 @@ protocol SamplePageInteractorToPresenterProtocol: CommonInteractorToPresenterPro
     func fetchDataFailed()
 }
 
+protocol SamplePageRouterToPresenterProtocol: CommonRouterToPresenterProtocol{
+    associatedtype AssocViewR2P: View
+    @MainActor func showSamplePage() -> AssocViewR2P
+}
+
 protocol SamplePagePresenterToViewProtocol: CommonPresenterToViewProtocol{
-    associatedtype AssocView: View
-    func showSamplePage() -> AssocView
+    associatedtype AssocViewP2V: View
+    @MainActor func showSamplePage() -> AssocViewP2V
 }
 
 protocol SamplePagePresenterToInteractorProtocol: CommonPresenterToInteractorProtocol{
@@ -27,5 +33,6 @@ protocol SamplePagePresenterToInteractorProtocol: CommonPresenterToInteractorPro
 }
 
 protocol SamplePagePresenterToRouterProtocol: CommonPresenterToRouterProtocol{
-    func pushToSampleDetailPage()
+    func pushToSampleDetailPage() -> SampleDetailPagePresenter
 }
+
