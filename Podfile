@@ -6,20 +6,20 @@ target 'swiftui+viper+rxswift' do
   use_frameworks!
 
   # Pods for swiftui+viper+rxswift
-  pod 'RxSwift' 
-  pod 'RxCocoa' 
+#  pod 'RxSwift' 
+#  pod 'RxCocoa' 
 
   target 'swiftui+viper+rxswiftTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'RxSwift' 
-    pod 'RxCocoa' 
+#    pod 'RxSwift' 
+#    pod 'RxCocoa' 
   end
 
   target 'swiftui+viper+rxswiftUITests' do
     # Pods for testing
-    pod 'RxSwift' 
-    pod 'RxCocoa' 
+#    pod 'RxSwift' 
+#    pod 'RxCocoa' 
   end
 
 end

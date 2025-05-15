@@ -12,24 +12,27 @@ import SwiftUI
 class SamplePageView: CommonView<SamplePagePresenter> {}
 
 extension SamplePageView: SamplePagePresenterToViewProtocol{
-    func showSamplePage() -> any View {
-        SamplePage()
+    @MainActor func showSamplePage() -> some View {
+        SamplePage(presenter: presenter!)
     }
 }
 
 struct SamplePage: View {
+    @State var presenter: SamplePagePresenter
 
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            NavigationLink(value: "NewView") {
+                Text("Show NewView")
+            }
+            .buttonStyle(.plain)
+            .navigationDestination(for: String.self) { view in
+                presenter.showSampleDetailPage()
+            }
         }
-        .padding()
     }
 }
 
 //#Preview {
-//    SamplePageView()
+//    SamplePage()
 //}

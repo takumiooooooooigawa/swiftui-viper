@@ -5,6 +5,8 @@
 //  Created by Takumi Oigawa on 2025/05/10.
 //
 
+import SwiftUI
+
 class SamplePagePresenter: CommonPresenter<SamplePageView, SamplePageInteractor, SamplePageRouter> {}
 
 
@@ -12,7 +14,9 @@ extension SamplePagePresenter: SamplePageViewToPresenterProtocol {
     func fetchData() {
     }
     
-    func showSampleDetailPage() {
+    @MainActor func showSampleDetailPage() -> some View {
+        let detailRouter = router!.pushToSampleDetailPage()
+        return detailRouter.showSampleDetailPage()
     }
 }
 
@@ -21,5 +25,11 @@ extension SamplePagePresenter: SamplePageInteractorToPresenterProtocol {
     }
     
     func fetchDataFailed() {
+    }
+}
+
+extension SamplePagePresenter: SamplePageRouterToPresenterProtocol {
+    @MainActor func showSamplePage() -> some View {
+        return view!.showSamplePage()
     }
 }

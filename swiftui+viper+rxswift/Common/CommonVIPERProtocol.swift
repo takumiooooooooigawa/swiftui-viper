@@ -10,17 +10,42 @@ protocol CommonPresenterToInteractorProtocol: AnyObject {}
 protocol CommonPresenterToRouterProtocol: AnyObject {}
 protocol CommonViewToPresenterProtocol: AnyObject {}
 protocol CommonInteractorToPresenterProtocol: AnyObject {}
+protocol CommonRouterToPresenterProtocol: AnyObject {}
 
+typealias Presenter = CommonPresenter
 class CommonPresenter<View: CommonPresenterToViewProtocol, Interactor: CommonPresenterToInteractorProtocol, Router: CommonPresenterToRouterProtocol> {
     var view: View?
     var interactor: Interactor?
     var router: Router?
+
+    
+    func lateInit(view: View, interactor: Interactor, router: Router) {
+        self.view = view
+        self.interactor = interactor
+        self.router = router
+    }
 }
 
 class CommonView<Presenter: CommonViewToPresenterProtocol> {
-    var presenter: Presenter?
+    weak var presenter: Presenter?
+    
+    init(presenter: Presenter) {
+        self.presenter = presenter
+    }
 }
 
 class CommonInteractor<Presenter: CommonInteractorToPresenterProtocol> {
-    var presenter: Presenter?
+    weak var presenter: Presenter?
+    
+    init(presenter: Presenter) {
+        self.presenter = presenter
+    }
+}
+
+class CommonRouter<Presenter: CommonRouterToPresenterProtocol> {
+    weak var presenter: Presenter?
+    
+    init(presenter: Presenter) {
+        self.presenter = presenter
+    }
 }
